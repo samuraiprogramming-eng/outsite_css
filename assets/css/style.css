@@ -223,4 +223,10 @@ p {
   -webkit-transform: translateX(calc(90px * 3));
           transform: translateX(calc(90px * 3));
 }
+
+@media (min-width: 0px) and (max-width: 375px) {
+  .effects {
+    left: 12px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
