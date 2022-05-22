@@ -1,0 +1,75 @@
+// ============== Style List Menu ============== //
+.section {
+    @extend %Global;
+    min-height: 100vh;
+    background: $clr-alt-dark-1;
+}
+.menu {
+    position: relative;
+    transform: skewY(-15deg);
+}
+.menu__list {
+    position: relative;
+    width: 200px;
+    padding: 1rem;
+    background: $clr-alt-dark;
+    transition: $transition;
+    z-index: var(--i);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: -40px;
+        width: 40px;
+        height: 100%;
+        background: $clr-alt-dark;
+        transform-origin: right;
+        transform: skewY(45deg);
+        transition: $transition;
+    }
+         &::after {
+             content: '';
+             position: absolute;
+             top: -40px;
+             left: 0px;
+             width: 100%;
+             height: 40px;
+             background: $clr-alt-dark;
+             transform-origin: bottom;
+             transform: skewX(45deg);
+             transition: $transition;
+         }
+   &:hover{
+       background: $clr-primary-6;
+       transform: translateX(-50px);
+   }
+}
+.menu__list--left:hover {
+    background: $clr-red-dark;
+    transform: translateX(50px);
+}
+.menu__list:hover::before,
+.menu__list:hover::after {
+    background: $clr-primary-6;
+}
+.menu__list:last-child::after {
+    box-shadow: -120px 120px 20px rgba(0,0,0,0.25);
+}
+.menu__link {
+    display: block;
+    color: $clr-grey-6;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    transition: $transition;
+    &:hover {
+        color: $clr-white;
+    }
+}
+
+// ==============
+.menu__left {
+    margin-left: 16rem;
+}
